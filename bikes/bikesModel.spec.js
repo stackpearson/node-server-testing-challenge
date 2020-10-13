@@ -17,5 +17,13 @@ describe('bikes model', () => {
             expect(bikes).toHaveLength(1)
         })
 
+        it('should have the correct insertion', async () => {
+            let bikes = await Bikes.insert({ make: 'Honda', model: 'CBR 1000', year: 2000 });
+            expect(bikes.make).toBe('Honda');
+            expect(bikes.model).toBe('CBR 1000');
+            expect(bikes.year).toBe(2000);
+
+        })
+
     })
 })
